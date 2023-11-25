@@ -1,0 +1,26 @@
+type ClothingDesign = record {
+  id : text;
+  name : text;
+  createdAt : nat64;
+  description : text;
+  sharedWith : vec principal;
+  designer : principal;
+  updatedAt : opt nat64;
+  image : text;
+};
+type ClothingDesignPayload = record {
+  name : text;
+  description : text;
+  image : text;
+};
+type _AzleResult = variant { Ok : ClothingDesign; Err : text };
+type _AzleResult_1 = variant { Ok : vec ClothingDesign; Err : text };
+service : () -> {
+  createClothingDesign : (ClothingDesignPayload) -> (_AzleResult);
+  deleteClothingDesign : (text) -> (_AzleResult);
+  getAllClothingDesigns : () -> (_AzleResult_1) query;
+  getClothingDesign : (text) -> (_AzleResult) query;
+  shareClothingDesign : (text, principal) -> (_AzleResult);
+  unshareClothingDesign : (text, principal) -> (_AzleResult);
+  updateClothingDesign : (text, ClothingDesignPayload) -> (_AzleResult);
+}
