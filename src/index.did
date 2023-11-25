@@ -19,7 +19,7 @@ service : () -> {
   createClothingDesign : (ClothingDesignPayload) -> (_AzleResult);
   deleteClothingDesign : (text) -> (_AzleResult);
   getAllClothingDesigns : () -> (_AzleResult_1) query;
-  getClothingDesign : (text) -> (_AzleResult) query;
+  getClothingDesignById : (text) -> (_AzleResult) query;
   shareClothingDesign : (text, principal) -> (_AzleResult);
   unshareClothingDesign : (text, principal) -> (_AzleResult);
   updateClothingDesign : (text, ClothingDesignPayload) -> (_AzleResult);
